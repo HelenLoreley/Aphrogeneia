@@ -1,0 +1,113 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- 1. 设置标签页图标 (Favicon) -->
+    <link rel="icon" type="image/png" href="public/assets/Helen/bluemoon.png" />
+    
+    <title>Helen AphroIcy | Enchanter</title>
+    
+    <!-- Fonts: Unified Elegant Serif Stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Noto+Serif+SC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              space: '#050810',
+              gold: '#D4B483',
+              cyan: '#8afff7', // Softer Cyan
+              crimson: '#8a0a0a',
+              mint: '#9affdc',
+              rose: '#ff9ec4',
+              lavender: '#d4b3ff',
+              moon: '#f0f4ff', // Moon White
+            },
+            fontFamily: {
+              // Core aesthetic change: Unified Serif
+              serif: ['"Playfair Display"', '"Noto Serif SC"', 'serif'],
+              cinzel: ['"Cinzel Decorative"', 'cursive'],
+              orbitron: ['"Orbitron"', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050810;
+        color: #D4B483;
+        overflow: hidden;
+        /* cursor: none;  Uncomment if you want to hide default cursor entirely for immersion */
+        font-family: "Playfair Display", "Noto Serif SC", serif; 
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #050810; }
+      ::-webkit-scrollbar-thumb { background: #D4B483; border-radius: 2px; }
+      
+      .snap-container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+        width: 100vw;
+        scroll-behavior: smooth;
+      }
+      .snap-section {
+        scroll-snap-align: start;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Magic Text Glow */
+      .text-glow {
+        text-shadow: 0 0 15px rgba(212,180,131,0.3), 0 0 30px rgba(154,255,220,0.2);
+      }
+      .glass-panel {
+        background: rgba(20, 20, 30, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.0",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
