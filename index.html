@@ -1,18 +1,18 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <!-- 1. 设置标签页图标 (Favicon) -->
+    
+    <!-- 1. 设置标签页图标 (Favicon) -->
     <link rel="icon" type="image/png" href="/Aphrogeneia/assets/Helen/bluemoon.png" />
     
     <title>Helen AphroIcy | Enchanter</title>
     
-    <!-- Fonts: Unified Elegant Serif Stack -->
+    <!-- Fonts: 引入全权重的 Noto Serif SC 以匹配 Cinzel 的粗细变化，实现中英文风格统一 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Noto+Serif+SC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,10 +31,12 @@
               moon: '#f0f4ff', // Moon White
             },
             fontFamily: {
-              // Core aesthetic change: Unified Serif
+              // 核心修改：统一中英文衬线体风格
+              // 将 Noto Serif SC 加入所有字体栈，确保中文显示为宋体
               serif: ['"Playfair Display"', '"Noto Serif SC"', 'serif'],
-              cinzel: ['"Cinzel Decorative"', 'cursive'],
-              orbitron: ['"Orbitron"', 'sans-serif'],
+              cinzel: ['"Cinzel Decorative"', '"Noto Serif SC"', 'cursive'],
+              orbitron: ['"Orbitron"', '"Noto Serif SC"', 'sans-serif'],
+              sans: ['"Noto Serif SC"', 'serif'], // 强制默认无衬线也显示为宋体
             },
             animation: {
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -55,9 +57,19 @@
         background-color: #050810;
         color: #D4B483;
         overflow: hidden;
-        /* cursor: none;  Uncomment if you want to hide default cursor entirely for immersion */
+        cursor: none; /* 隐藏默认光标，使用自定义 3D 光标 */
+        /* 全局强制衬线体风格 */
         font-family: "Playfair Display", "Noto Serif SC", serif; 
+        /* 字体平滑渲染，让宋体更清晰 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
+
+      /* 优化中文标题的粗细显示 */
+      h1, h2, h3, h4, h5, h6, strong, b {
+        font-weight: 700;
+      }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: #050810; }
@@ -105,7 +117,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/Aphrogeneia/assets/index-B8xpkDnY.js"></script>
+  <script type="module" crossorigin src="/Aphrogeneia/assets/index-BdXibWiw.js"></script>
   <link rel="stylesheet" crossorigin href="/Aphrogeneia/assets/index-BNOTy7ho.css">
 </head>
   <body>
